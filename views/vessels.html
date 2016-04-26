@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data-Fish-Bank</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    
+ 
+  #form{
+    width: 100%;
+    height: 630px;
+    background-color: black;
+    opacity:.8;
+    padding: 20px;
+  }
+
+  #element{
+    margin:20px;
+  }
+
+  #element-button{
+    margin:20px;
+    margin-top: 45px;
+    height: 100%;
+    width: 20%;
+    margin-left: 50px;
+  }
+
+  #label{
+    color: white;
+  }
+
+  #req{
+    width: 100%;
+  }
+  </style>
+  </head>
+  <body>
+
+  <!--navegation bar-->
+  <nav class="navbar navbar-inverse" style="margin:0;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        
+        <a class="navbar-brand" href="#">DFB</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li class="active"><a href="vessels.html">Vessels</a></li>
+          <li><a href="report.html">Fishing report</a></li> 
+          <li><a href="fish.html">Fish report</a></li> 
+                    <li ><span class="glyphicon glyphicon-exclamation-sign" style="color: red; margin-top: 15px;margin-left: 50px;"></span></li> 
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col-md-13" class="container-fluid" id="form">
+    <form class="form-inline" role="form">
+      <div class="row">
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label"  id="label">Name: </label>
+          <div></div>
+          <input type="text" class="form-control" id="req" placeholder="Vassel name" style="align-self: right;">
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">Vessel Country: </label>
+          <div></div>
+          <select class="form-control" id="req">
+            <option class="active">Select vessel country</option>
+            <option>Australia</option>
+            <option>Colombia</option>
+            <option>Ecuador</option>
+            <option>Japan</option>
+          </select>
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">Vessel type: </label>
+          <div></div>
+          <select class="form-control" id="req">
+            <option class="active">Select vessel type</option>
+            <option>Bunker</option>
+            <option>Fish carrier</option>
+            <option>Handliner</option>
+            <option>Multipurpose</option>
+          </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label"  id="label">IRCS:</label>
+          <div></div>
+          <input type="text" class="form-control" id="req" placeholder="Vassel IRCS">
+        </div>
+         <div class="col-sm-3 form" id="element">
+          <label class=".control-label"  id="label">WIN: </label>
+          <div></div>
+          <input type="text" class="form-control" id="req" placeholder="Vassel WIN">
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">VID: </label>
+          <div></div>
+          <input type="text" class="form-control" id="req" placeholder="Vassel VID">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">Authorisation to tranship on the high seas: </label>
+          <div></div>
+          <select class="form-control" id="req">
+            <option class="active">Select</option>
+            <option>YES</option>
+            <option>NO</option>
+          </select>
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">Fishing Methods: </label>
+          <div></div>
+          <select class="form-control" id="req">
+            <option class="active">Select method</option>
+            <option>Danish seines</option>
+            <option>Driftnets</option>
+            <option>Harpoons</option>
+            <option>Pair seines</option>
+            <option>Trolling lines</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="col-sm-3 btn btn-primary" id="element-button">Search</button>
+      </div>
+    </form>
+    <div></div>
+    <table class="table table-hover" style="color: white;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Vessel Country</th>
+        <th>IRCS</th>
+        <th>WIN</th>
+        <th>VID</th>
+        <th>Fishing Methods</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>VICTORIA II </td>
+        <td>Liberia </td>
+        <td>940-15-NYC  </td>
+        <td>22 Dec 2015 - 22 Dec 2016  </td>
+        <td>FISH CARRIER  </td>
+        <td>D5KD3 D5KD3 9499</td>
+      </tr>
+      <tr>
+        <td>VICTORIA NO. 168  </td>
+        <td>Panama   </td>
+        <td>28435-PEXT  </td>
+        <td>22 Jan 2015 - 22 Jan 2017  </td>
+        <td>FISH CARRIER  </td>
+        <td>3FTI9 3FTI9 10010 </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+  <iframe name="marinetraffic" id="marinetraffic" width="100%" height="400" scrolling="no" frameborder="1" src="http://www.marinetraffic.com/en/ais/embed/zoom:9/centery:37.446/centerx:24.9467/maptype:3/shownames:false/mmsi:0/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:/remember:false">Browser does not support embedded objects.&lt;br/&gt;Visit directly &lt;a href="http://www.marinetraffic.com/"&gt;www.marinetraffic.com&lt;/a&gt;</iframe>
+
+</body>
+</html>

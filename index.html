@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data-Fish-Bank</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+      height: 675px;
+  }
+
+    #carusel{
+      width: 100%;
+      height: 675px;
+      background-color:black; 
+      opacity:.8;
+    }
+
+.news{border:0;margin:0;}
+
+  </style>
+  </head>
+  <body>
+
+   <!--navegation bar-->
+  <nav class="navbar navbar-inverse" style="margin:0;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">DFB</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="views/vessels.html">Vessels</a></li>
+          <li><a href="views/report.html">Fishing report</a></li> 
+          <li ><a href="fish.html">Fish report</a></li> 
+          <li ><span class="glyphicon glyphicon-exclamation-sign" style="color: red; margin-top: 15px;margin-left: 50px;"></span></li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--carousel-->
+  <div class="container-fluid" style="padding:0;margin:0;">
+    
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <a href="https://www.sciencedaily.com/releases/2016/04/160404153036.htm"> <h3>Fishing for the future of coral reefs.</h3><img src="https://images.sciencedaily.com/2016/04/160404153036_1_540x360.jpg" alt="Chania" id="carusel"></a>
+        </div>
+
+        <div class="item">
+          <a href="https://www.sciencedaily.com/releases/2016/04/160419145413.htm"> <h3>'Forgotten' fish turns up in West Texas.</h3><img src="https://images.sciencedaily.com/2016/04/160419145413_1_540x360.jpg" alt="Chania" id="carusel"></a>
+        </div>
+      
+        <div class="item">
+          <a href="https://www.sciencedaily.com/releases/2016/04/160405161248.htm"> <h3>First Salish Sea-wide shoreline armoring study shows cumulative effects on ecosystem.</h3><img src="https://images.sciencedaily.com/2016/04/160405161248_1_540x360.jpg" alt="Chania" id="carusel"></a>
+        </div>
+
+        <div class="item">
+          <a href="https://www.sciencedaily.com/releases/2016/04/160405105545.htm"> <h3>Scientists net virus behind tilapia die-offs in Israel, Ecuador.</h3><img src="https://images.sciencedaily.com/2016/04/160405105545_1_540x360.jpg" alt="Chania" id="carusel"></a>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  </body>
+  </html>
+
+
+

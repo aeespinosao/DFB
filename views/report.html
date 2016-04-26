@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <title>Data-Fish-Bank</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    
+ 
+  #form{
+    width: 100%;
+    background-color: black;
+    opacity:.8;
+    padding: 50px;
+  }
+
+  #element{
+    margin:20px;
+  }
+
+  #element-button{
+    height: 100%;
+    width: 20%;
+    margin-left: 35px;
+  }
+
+  #label{
+    color: white;
+  }
+
+  #req{
+    width: 100%;
+  }
+  </style>
+  </head>
+  <body >
+
+  <!--navegation bar-->
+  <nav class="navbar navbar-inverse" style="margin:0;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        
+        <a class="navbar-brand" href="#">DFB</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="vessels.html">Vessels</a></li>
+          <li class="active"><a href="report.html">Fishing report</a></li> 
+          <li><a href="fish.html">Fish report</a></li> 
+                    <li ><span class="glyphicon glyphicon-exclamation-sign" style="color: red; margin-top: 15px;margin-left: 50px;"></span></li> 
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+       
+
+  <div class="col-md-13" class="container-fluid" id="form" >
+    <form class="form-inline" role="form">
+      <div class="panel panel-default" style="background-color: black"><h1 style="color:white;padding-left: 50px;">General data</h1>
+        <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-3 form" id="element">
+            <label class=".control-label" id="label">Date: </label>
+            <div></div>
+            <div class='input-group date' id='datetimepicker5' style='width: 100%;'>
+              <input type='date' class="form-control"/>
+            </div>
+          </div>
+          <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">Vessels name: </label>
+          <div></div>
+          <input type="text" class="form-control" id="req" placeholder="Vassel name" style="align-self: right;">
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">Fishing Methods: </label>
+          <div></div>
+          <select class="form-control" id="req">
+            <option class="active">Select method</option>
+            <option>Danish seines</option>
+            <option>Driftnets</option>
+            <option>Harpoons</option>
+            <option>Pair seines</option>
+            <option>Trolling lines</option>
+          </select>
+        </div>
+        </div>
+        <div class="col-sm-3 form" id="element" style="width: 100%;">
+          <label class=".control-label" id="label">Location: </label>
+          <div></div>
+          <div class="col-sm-3" id="mapholder"></div>
+            <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+            <script>
+              var x = document.getElementById("mapholder");
+              if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition, showError);
+                } else { 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+
+              
+
+              function showPosition(position) {
+                  lat = position.coords.latitude;
+                  lon = position.coords.longitude;
+                  latlon = new google.maps.LatLng(lat, lon)
+                  mapholder = document.getElementById('mapholder')
+                  mapholder.style.height = '250px';
+                  mapholder.style.width = '50%';
+
+
+                  var myOptions = {
+                  center:latlon,zoom:14,
+                  mapTypeId:google.maps.MapTypeId.ROADMAP,
+                  mapTypeControl:false,
+                  navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+                  }
+                  
+                  var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+                  var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+                  marker.addListener('click', toggleBounce);
+                  
+              }
+              function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                  marker.setAnimation(null);
+                } else {
+                  marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+              }
+
+              function showError(error) {
+                  switch(error.code) {
+                      case error.PERMISSION_DENIED:
+                          x.innerHTML = "User denied the request for Geolocation."
+                          break;
+                      case error.POSITION_UNAVAILABLE:
+                          x.innerHTML = "Location information is unavailable."
+                          break;
+                      case error.TIMEOUT:
+                          x.innerHTML = "The request to get user location timed out."
+                          break;
+                      case error.UNKNOWN_ERROR:
+                          x.innerHTML = "An unknown error occurred."
+                          break;
+                  }
+              }
+
+            </script>  
+        </div>   
+    </div>
+    </div>
+      <div class="panel panel-default" style="background-color: black"><h1 style="color:white;padding-left: 50px;">Fish data</h1>
+        <div class="panel-body">
+            <div class="row">
+
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label" id="label">Species: </label>
+          <div></div>
+          <select class="form-control" id="req">
+            <option class="active">Select specie</option>
+            <option>Bunker</option>
+            <option>Fish carrier</option>
+            <option>Handliner</option>
+            <option>Multipurpose</option>
+          </select>
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label"  id="label">Amount of fish:</label>
+          <div></div>
+          <input type="number" class="form-control" id="req" placeholder="Give the amount of fish in [Kg]">
+        </div>
+         <div class="col-sm-3 form" id="element">
+          <label class=".control-label"  id="label">Total weight:</label>
+          <div></div>
+          <input type="number" class="form-control" id="req" placeholder="Give the total weight in [Kg]">
+        </div>
+        
+      </div>
+      </div>
+      </div>
+      <div class="panel panel-default" style="background-color: black"><h1 style="color:white;padding-left: 50px;">Enviromental data</h1>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-3 form" id="element">
+            <label class=".control-label" id="label">Weather: </label>
+            <div></div>
+            <select class="form-control" id="req">
+            <option class="active">Select weather</option>
+            <option>Soleado</option>
+            <option>Lluvioso</option>
+            <option>Nublado</option>
+          </select>
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label"  id="label">Humidity: </label>
+          <div></div>
+          <input type="number" class="form-control" id="req" placeholder="Give the humidity">
+        </div>
+        <div class="col-sm-3 form" id="element">
+          <label class=".control-label"  id="label">Humidity: </label>
+          <div></div>
+          <input type="number" class="form-control" id="req" placeholder="Give the humidity">
+        </div>
+        </div>
+        </div>
+      </div>
+      <button  type="submit" class="col-sm-3 btn btn-primary" id="element-button">Report</button>
+    </form>
+  </div>
+
+</body>
+</html>
