@@ -13,7 +13,7 @@
   #form{
     width: 100%;
     height: 630px;
-    background-color: black;
+    background-color: white;
     opacity:.8;
     padding: 20px;
   }
@@ -31,31 +31,31 @@
   }
 
   #label{
-    color: white;
+    color: #000080;
   }
 
   #req{
     width: 100%;
+    border-color: #191970;
   }
   </style>
   </head>
   <body>
 
   <!--navegation bar-->
+  <!--navegation bar-->
   <nav class="navbar navbar-inverse" style="margin:0;">
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: white;">
       <div class="navbar-header">
-        
-        <a class="navbar-brand" href="#">DFB</a>
+        <a class="navbar-brand" href="../index.html" style="color: #48D1CC;"><strong>DFB</strong></a>
       </div>
       <div>
         <ul class="nav navbar-nav">
-          <li><a href="../index.html">Home</a></li>
-          <li class="active"><a href="vessels.html">Vessels</a></li>
-          <li><a href="report.html">Fishing report</a></li> 
-          <li><a href="fish.html">Fish report</a></li> 
-                    <li ><span class="glyphicon glyphicon-exclamation-sign" style="color: red; margin-top: 15px;margin-left: 50px;"></span></li> 
-
+          <li ><a href="../index.html" style="color: #48D1CC;"><strong>HOME</strong></a></li>
+          <li  class="active"><a href="vessels.html" style="color: #48D1CC;"><strong>VESSELS</strong></a></li>
+          <li><a href="report.html" style="color: #48D1CC;"><strong>FISHING REPORT</strong></a></li> 
+          <li ><a href="fish.html" style="color: #48D1CC;"><strong>FISH REPORT</strong></a></li> 
+          <li ><span class="glyphicon glyphicon-exclamation-sign" style="color: red; margin-top: 15px;margin-left: 50px;"></span></li> 
         </ul>
       </div>
     </div>
@@ -72,7 +72,7 @@
         <div class="col-sm-3 form" id="element">
           <label class=".control-label" id="label">Vessel Country: </label>
           <div></div>
-          <select class="form-control" id="req">
+          <select class="form-control" id="req" >
             <option class="active">Select vessel country</option>
             <option>Australia</option>
             <option>Colombia</option>
@@ -136,7 +136,7 @@
       </div>
     </form>
     <div></div>
-    <table class="table table-hover" style="color: white;">
+    <table class="table table-hover" style="color: #000080; margin-top: 50px;">
     <thead>
       <tr>
         <th>Name</th>
